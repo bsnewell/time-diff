@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Difference Calculator</title>
+</head>
+<body>
+    <h1>Time Difference Calculator</h1>
+    <form method="POST">
+        <label for="target_date">Enter the target date (YYYY-MM-DD HH:MM:SS):</label>
+        <input type="text" id="target_date" name="target_date" required>
+        <button type="submit">Calculate</button>
+    </form>
+    {% if result %}
+        <h2>Time difference from now to {{ target_date }}:</h2>
+        <ul>
+            <li>Years: {{ result.years }}</li>
+            <li>Months: {{ result.months }}</li>
+            <li>Weeks: {{ result.weeks }}</li>
+            <li>Days: {{ result.days }}</li>
+            <li>Hours: {{ result.hours }}</li>
+            <li>Seconds: {{ result.seconds }}</li>
+        </ul>
+    {% endif %}
+</body>
+</html>
